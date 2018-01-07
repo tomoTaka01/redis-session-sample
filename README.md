@@ -1,22 +1,15 @@
 ## Spring Boot Session Sample
-  * As of 2018-01-07: Srping Boot version 1.5.9
-  * using @SessionAttributes to share the User sample
-  
-  * HomeController.java
-```java
-@Controller
-@SessionAttributes("user")
-public class Input1Controller {
-    private static final Logger logger = LoggerFactory.getLogger(Input1Controller.class);
-    @ModelAttribute("genders")
-    public List<String> genders() {
-        return Arrays.asList("male", "female");
-    }
-    @PostMapping("/input1")
-    public String input1(@ModelAttribute("user") User user) {
-        logger.info("start input1 method user=[{}]", user.toString());
-        return "input2";
-    }
-}
+  * As of 2018-01-07: Srping Boot version 2.0.0.M7
+
+  * The error occurs
+    * The same code works find , if I use Spring Boot version 1.5.9?
+
 ```
-  
+Whitelabel Error Page
+This application has no explicit mapping for /error, so you are seeing this as a fallback.
+
+Sun Jan 07 22:13:13 JST 2018
+There was an unexpected error (type=Internal Server Error, status=500).
+Failed to convert value of type 'com.example.redissessionsample.domain.User' to required type 'com.example.redissessionsample.domain.User'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'com.example.redissessionsample.domain.User' to required type 'com.example.redissessionsample.domain.User': no matching editors or conversion strategy found
+```
+
