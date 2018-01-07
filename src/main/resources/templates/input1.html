@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>input1</title>
+</head>
+<body>
+<h3>input1</h3>
+<form action="input2.html" th:action="@{/input1}" th:object="${user}" method="post">
+    <div>
+        <div>
+            <label>User:</label>
+            <input type="text" th:field="*{userName}"/>
+        </div>
+        <div>
+            <button type="submit">next</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

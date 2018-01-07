@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>input2</title>
+</head>
+<body>
+<h3>input2</h3>
+<form action="input3.html" th:action="@{/input2}" th:object="${user}" method="post">
+    <div>
+        <label>User:</label>
+        <span th:text="*{userName}">user</span>
+    </div>
+    <div>
+        <label>gender:</label>
+        <ul>
+            <li th:each="gen: ${genders}">
+                <input type="radio" th:field="*{gender}" th:value="${gen}"/>
+                <label th:text="${gen}">female</label>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <button type="submit">next</button>
+    </div>
+</form>
+
+</body>
+</html>

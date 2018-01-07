@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>input3</title>
+</head>
+<body>
+<h3>input3</h3>
+<form action="inputcomplete.html" th:action="@{/input3}" th:object="${user}" method="post">
+    <div>
+        <label>User:</label>
+        <span th:text="*{userName}">user</span>
+    </div>
+    <div>
+        <label>occupation:</label>
+        <select th:field="*{occupation}">
+            <option th:each="occ: ${occupations}"
+                    th:value="${occ}"
+                    th:text="${occ}">developer
+            </option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">next</button>
+    </div>
+</form>
+
+</body>
+</html>

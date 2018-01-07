@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>input complete</title>
+</head>
+<body>
+<h3>input complete</h3>
+<div>
+    <div>
+        <label>User:</label>
+        <span th:text="${user.userName}">user name</span>
+    </div>
+    <div>
+        <label>gender:</label>
+        <span th:text="${user.gender}">female</span>
+    </div>
+    <div>
+        <label>occupation:</label>
+        <span th:text="${user.occupation}">developer</span>
+    </div>
+</div>
+</body>
+</html>
