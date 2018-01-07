@@ -1,6 +1,7 @@
 ## Spring Boot Session Sample
   * As of 2018-01-07: Srping Boot version 1.5.9
   * using @SessionAttributes to share the User sample
+  * adding @EnableRedisHttpSession annotation to use Redis for session
 
 ### process image
   * input1,input2,input3 and inputcomplete screen use the same user attribute which is stored in redis.
@@ -11,6 +12,17 @@
   * use docker compose
 ```
 docker-compose -f docker/docker-compose.yml up
+```
+
+  * RedisSessionSampleApplication.java
+```java
+@SpringBootApplication
+@EnableRedisHttpSession
+public class RedisSessionSampleApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(RedisSessionSampleApplication.class, args);
+  }
+}
 ```
 
   * HomeController.java
