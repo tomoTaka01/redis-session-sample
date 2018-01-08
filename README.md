@@ -3,6 +3,7 @@
 
   * The error occurs
     * The same code works find , if I use Spring Boot version 1.5.9?
+    * The above problem solved by removing DevTools(@ankinson Mr.Andy Wilkinson tweets this workaround to me)2018-01-08!!!
 
 ```
 Whitelabel Error Page
